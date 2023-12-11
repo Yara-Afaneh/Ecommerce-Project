@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+/* font-family: 'Josefin Sans', sans-serif; */
+
+:root{
+    --main-color:rgb(237 20 241 / 68%);  
+
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.main-color{
+    color: var(--main-color);
+}
+
+.navbar img{
+   width:40%;
+}
+
+.navbar .navbar-nav .nav-link, .navbar .navbar-nav .dropdown-item{
+    font-size: 18px;
+    
+
+}
+
+.navbar .navbar-nav .nav-link.active{
+    color:var(--main-color);
+}
+
+.navbar .navbar-nav .nav-link:hover,.navbar .navbar-nav .dropdown-item:hover{
+    color:var(--main-color);
+}
+.badge {
+    background-color: var(--main-color);
+}

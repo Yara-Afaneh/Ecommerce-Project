@@ -1,0 +1,33 @@
+:root{
+    --main-color:rgb(237 20 241 / 68%);  
+
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.main-color{
+    color: var(--main-color);
+}
+.swiper-button-prev{
+    display: none;
+}
+
+.swiper-button-next{
+    display: none;
+}
+
+.swiper{
+    padding: 50px;
+}
+.swiper-custom-pagination{
+    text-align: center;
+}
+
+.swiper-pagination-bullet{
+    background-color: var(--main-color);
+}
+a{
+    text-decoration-line: none;
+    color:black;
+}

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+/* font-family: 'Josefin Sans', sans-serif; */
+
+:root{
+    --main-color:rgb(237 20 241 / 68%);  
+
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.main-color{
+    color: var(--main-color);
+}
+
+.addtocart-btn{
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.addtocart-btn:hover{
+    background-color: white;
+    color: var(--main-color);
+    border:1px solid var(--main-color);
+    padding: 10px;
+    border-radius: 10px;
+}
