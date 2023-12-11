@@ -13,27 +13,31 @@ export default function Product() {
   const {addToCartContext}=useContext(CartContext)
 
   const getProductDetails=async ()=>{
-    const {data}=await axios.get(`${import.meta.env.VITE_API_URL}/${productId}`)
+    const {data}=await axios.get(`${import.meta.env.VITE_API_URL}/products/${productId}`)
     return data.product;
   }
   
   const addToCart=async (productId)=>{
         const result = await addToCartContext(productId);
-        console.log(result); 
+        return(result); 
         navigate('/cart');  
   }
 
    const {data,isLoading}= useQuery('product-details',getProductDetails);
+     console.log(data);
    if (isLoading){
     return <Loader/>
    
    }
+   
+   
   return (
+   
     <div className='container row ms-5'>
        <div className='my-2 text-center col-md-4 '>
         {data.subImages.map((img,index)=>
         <div  key={index}>
-            <img src={img.secure_url} alt={'product image'} className='my-3'/>
+            <img src={img.secure_url} alt={'product image'} className='my-3 w-75'/>
         </div>
           
         )}
