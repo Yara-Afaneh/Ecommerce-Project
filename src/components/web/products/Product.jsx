@@ -19,12 +19,11 @@ export default function Product() {
   
   const addToCart=async (productId)=>{
         const result = await addToCartContext(productId);
-        return(result); 
         navigate('/cart');  
   }
 
    const {data,isLoading}= useQuery('product-details',getProductDetails);
-     console.log(data);
+    
    if (isLoading){
     return <Loader/>
    

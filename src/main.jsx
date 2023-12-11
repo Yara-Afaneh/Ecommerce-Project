@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <>
 
   <USerContextProvider>
-      <CartContextProvider>
+    <CartContextProvider>
     <QueryClientProvider client={queryClient}>
     <ToastContainer/>
     <App />

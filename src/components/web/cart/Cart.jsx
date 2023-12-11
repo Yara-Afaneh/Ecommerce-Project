@@ -4,10 +4,7 @@ import './Cart.css'
 
 
 export default function Cart() {
-
-
   const {getCartContext,removeCartContext}=useContext(CartContext)
- 
   const [cart,setUser]=useState([]);
   const getCart= async () =>{
       const res = await getCartContext();
@@ -117,7 +114,7 @@ export default function Cart() {
                 <div className="price">{product.details.price}</div>
                 <div className="subtotal">${product.quantity*product.details.price}</div>
                  </div>
-            )):<h2 className='text-center main-color'>No Products in Cart</h2>}
+            )):<h2 className='text-center main-color'>Your Cart is Empty</h2>}
               
 
             </div>
