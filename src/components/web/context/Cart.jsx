@@ -10,7 +10,7 @@ export default function CartContextProvider({children}) {
         try {
           
             const token=localStorage.getItem('userToken');
-            const {data}= await axios.post(`https://ecommerce-node4.vercel.app/cart`,
+            const {data}= await axios.post(`${import.meta.env.VITE_API_URL}/cart`,
             {productId},
             {headers:{Authorization:`Tariq__${token}`}}
             )
@@ -37,7 +37,7 @@ export default function CartContextProvider({children}) {
     const getCartContext=async ()=>{
       try {
         const token= localStorage.getItem('userToken')
-        const {data}= await axios.get(`https://ecommerce-node4.vercel.app/cart`,
+        const {data}= await axios.get(`${import.meta.env.VITE_API_URL}/cart`,
         {headers:{Authorization:`Tariq__${token}`}})
         setCount(data.count)
         return data;

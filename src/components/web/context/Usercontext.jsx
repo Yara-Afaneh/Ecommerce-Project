@@ -11,7 +11,7 @@ export default function USerContextProvider({children}) {
 
 const getUserData= async()=>{
     if(userToken){
-        const {data}=await axios.get(`https://ecommerce-node4.vercel.app/user/profile`,  
+        const {data}=await axios.get(`${import.meta.env.VITE_API_URL}/user/profile`,  
         {headers:{authorization:`Tariq__${userToken}`}})
         setUserData(data.user);
         

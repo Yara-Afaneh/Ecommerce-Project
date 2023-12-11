@@ -21,7 +21,7 @@ export default function ForgetPassword() {
   }
 
   const onSubmit =async users =>{
-      const {data}= await axios.patch(`https://ecommerce-node4.vercel.app/auth/forgotPassword`,users)
+      const {data}= await axios.patch(`${import.meta.env.VITE_API_URL}/auth/forgotPassword`,users)
       console.log(data);
 
       if (data.message=='success'){
