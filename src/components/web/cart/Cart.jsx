@@ -4,16 +4,32 @@ import './Cart.css'
 
 
 export default function Cart() {
-  const {getCartContext,removeCartContext}=useContext(CartContext)
-  const [cart,setUser]=useState([]);
+  const {getCartContext,removeCartContext,clearAllProducts,increaseQuantity,decreaseQuantity}=useContext(CartContext)
+  const [cart,setCart]=useState([]);
   const getCart= async () =>{
       const res = await getCartContext();
-    setUser(res);
+    setCart(res);
   }
 
   useEffect(()=>{
     getCart()
   },[cart])
+
+
+  const clearAll =async () =>{
+    const res = await clearAllProducts();
+    return res;
+  }
+
+  const increase =async (productId) =>{
+    const res = await increaseQuantity(productId);
+    return res;
+  }
+
+  const decrease =async (productId) =>{
+    const res = await decreaseQuantity(productId);
+    return res;
+  }
   
 
   const removeCart=async (productId)=>{
@@ -76,7 +92,7 @@ export default function Cart() {
                   </div>
                 </div>
                 <div className="quantity">
-                  <button>
+                  <button onClick={()=>decrease(product.productId)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={16}
@@ -94,7 +110,7 @@ export default function Cart() {
                     </svg>
                   </button>
                   <span>{product.quantity}</span>
-                  <button>
+                  <button onClick={()=>increase(product.productId)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={16}
@@ -115,9 +131,9 @@ export default function Cart() {
                 <div className="subtotal">${product.quantity*product.details.price}</div>
                  </div>
             )):<h2 className='text-center main-color'>Your Cart is Empty</h2>}
-              
-
+             <button onClick={clearAll} className='clear-btn'>Clear All </button>
             </div>
+           
             <div className="cart-summary">
               <h2>Cart summary</h2>
               <div className="summery-items">

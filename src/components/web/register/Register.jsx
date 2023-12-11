@@ -26,7 +26,7 @@ export default function Register() {
         formData.append("password",users.password);
         formData.append("image",users.image);
         const {data}= await axios.post(`${import.meta.env.VITE_API_URL}`,formData)
-             console.log(data);
+           
           if (data.message=='success'){
             formik.resetForm();
             toast.success('Account created successfully, Please verify your email to log in', {

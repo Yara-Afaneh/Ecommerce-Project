@@ -29,7 +29,7 @@ let {setCount,getCartContext}=useContext(CartContext);
 useEffect(()=>{
   if (localStorage.getItem('userToken')!=null){
     setUserToken(localStorage.getItem('userToken'));
-    setCount(getCartContext().count)
+    setCount(getCartContext().count);
   }
 },[])
 

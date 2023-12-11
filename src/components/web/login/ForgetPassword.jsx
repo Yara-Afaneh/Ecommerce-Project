@@ -22,14 +22,14 @@ export default function ForgetPassword() {
 
   const onSubmit =async users =>{
       const {data}= await axios.patch(`${import.meta.env.VITE_API_URL}/auth/forgotPassword`,users)
-      console.log(data);
+    
 
       if (data.message=='success'){
            
         localStorage.setItem('userToken',data.token);
         toast.success('PasswordChanged successfully', {
           position: "bottom-center",
-          autoClose: false,
+          autoClose: true,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,

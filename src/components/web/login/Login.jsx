@@ -24,7 +24,7 @@ let {setUserToken,userToken}=useContext(UserContext)
 
   const onSubmit =async users =>{
       const {data}= await axios.post(`${import.meta.env.VITE_API_URL}/auth/signin`,users)
-      console.log(data);
+   
 
       if (data.message=='success'){
            
@@ -33,7 +33,7 @@ let {setUserToken,userToken}=useContext(UserContext)
           
         toast.success('Login successfully', {
           position: "bottom-center",
-          autoClose: false,
+          autoClose: true,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,

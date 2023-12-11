@@ -41,7 +41,7 @@ export default function Navbar() {
       </li>
 
       {userToken? (<li className="nav-item mx-3">
-      <Link className="nav-link"  to="/cart">Cart <span class="badge">{count}</span></Link>
+      <Link className="nav-link"  to="/cart">Cart <span className="badge">{count}</span></Link>
       </li>):null}
       
 

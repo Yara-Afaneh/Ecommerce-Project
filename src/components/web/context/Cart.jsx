@@ -17,7 +17,7 @@ export default function CartContextProvider({children}) {
             if(data.message=="success"){
             toast.success('Product added successfuly', {
                 position: "bottom-center",
-                autoClose: false,
+                autoClose: true,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -61,8 +61,58 @@ export default function CartContextProvider({children}) {
      
     }
 
+    const clearAllProducts=async ()=>{
+      try {
+        const token= localStorage.getItem('userToken')
+        const {data}= await axios.patch(`${import.meta.env.VITE_API_URL}/cart/clear`,
+        {},
+        {headers:{Authorization:`Tariq__${token}`}})
+        if (data.message=='success'){
+          toast.success('Cart is Clear ', {
+            position: "bottom-center",
+            autoClose: false,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });}
+            return (data);
+      } catch (error) {
+        console.log(error);
+      }
 
-  return <CartContext.Provider value={{addToCartContext,getCartContext,removeCartContext,count,setCount}}>
+    }
+
+    const increaseQuantity=async (productId)=>{
+      try {
+        const token= localStorage.getItem('userToken')
+        const {data}= await axios.patch(`${import.meta.env.VITE_API_URL}/cart/incraseQuantity`,
+        {productId},
+        {headers:{Authorization:`Tariq__${token}`}})
+            return (data);
+      } catch (error) {
+        console.log(error);
+      }
+
+    }
+    const decreaseQuantity=async (productId)=>{
+      try {
+        const token= localStorage.getItem('userToken')
+        const {data}= await axios.patch(`${import.meta.env.VITE_API_URL}/cart/decraseQuantity`,
+        {productId},
+        {headers:{Authorization:`Tariq__${token}`}})
+            return (data);
+      } catch (error) {
+        console.log(error);
+      }
+
+    }
+
+
+
+  return <CartContext.Provider value={{addToCartContext,getCartContext,removeCartContext,decreaseQuantity,count,setCount,increaseQuantity,clearAllProducts}}>
     {children}
   </CartContext.Provider>
 }

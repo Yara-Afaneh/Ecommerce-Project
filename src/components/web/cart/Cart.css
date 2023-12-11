@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+/* font-family: 'Josefin Sans', sans-serif; */
+
+:root{
+    --main-color:rgb(237 20 241 / 68%);  
+
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.main-color{
+    color: var(--main-color);
+}
+
+
+
 .cart{
     padding:20px 0 60px 0;
 
@@ -8,6 +25,7 @@
 .cart-items{
     display: flex;
     padding:40px 0;
+    flex-wrap: nowrap;
 
 
 }
@@ -260,6 +278,22 @@ footer .logo a {
 
 .second-footer{
     padding:20px 0 ;
+}
+
+.clear-btn{
+    background-color: var(--main-color)!important;
+    color: white!important;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.clear-btn:hover{
+    background-color: white;
+    color: var(--main-color);
+    border:1px solid var(--main-color);
+    padding: 10px;
+    border-radius: 10px;
 }
 
 

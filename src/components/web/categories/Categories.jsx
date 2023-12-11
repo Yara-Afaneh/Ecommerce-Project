@@ -31,7 +31,7 @@ export default function Categories() {
   return (
 
   <div className='container'>
-    <div class="swiper-slide" data-swiper-autoplay="2000"></div>
+    <div className="swiper-slide" data-swiper-autoplay="2000"></div>
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, Autoplay]}
     spaceBetween={50}
@@ -45,8 +45,7 @@ export default function Categories() {
     pagination={{ 
       el: '.swiper-custom-pagination',
       clickable: true }}
-    onSlideChange={() => console.log('slide change')}
-    onSwiper={(swiper) => console.log(swiper)}
+   
   >
     {data?.categories.length? data ?.categories.map((category)=>
     
@@ -58,7 +57,7 @@ export default function Categories() {
      ):<h2 className='text-center main-color'>no categories found</h2>}
 
   </Swiper>
-  <div class="swiper-custom-pagination"></div>
+  <div className="swiper-custom-pagination"></div>
   </div>
   )
 }

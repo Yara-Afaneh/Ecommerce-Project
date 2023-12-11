@@ -6,7 +6,6 @@ export default function Profile() {
   let {userData}=useContext(UserContext);
 
 
-    console.log(userData);
     
     
     
