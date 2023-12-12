@@ -10,6 +10,9 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import USerContextProvider from './components/web/context/Usercontext.jsx';
 import CartContextProvider from './components/web/context/Cart.jsx';
 
+
+
+
 const queryClient=new QueryClient();
 
 

@@ -19,6 +19,10 @@ import ProtectedRoutes from './components/web/protectedRoutes/ProtectedRoutes.js
 import Profile from './components/web/profile/Profile.jsx';
 import Auth from './components/web/protectedRoutes/Auth.jsx';
 import { CartContext } from './components/web/context/Cart.jsx';
+import Order from './components/web/cart/Order.jsx';
+import UserInfo from './components/web/profile/UserInfo.jsx';
+import UserContact from './components/web/profile/UserContact.jsx';
+import UserOrder from './components/web/profile/UserOrder.jsx';
 
 
 
@@ -89,7 +93,24 @@ const router= createBrowserRouter([
     },
     {
       path:'profile',
-      element:<Profile/>
+      element:
+      <ProtectedRoutes>
+      <Profile/>
+      </ProtectedRoutes>
+      ,
+         children:[{
+          path:'info',
+          element:<UserInfo/>
+         },{
+          path:'contact',
+          element:<UserContact/>
+         }
+         ,{
+          path:'order',
+          element:<UserOrder/>
+         }
+
+         ]
     },
     
     {
@@ -99,6 +120,10 @@ const router= createBrowserRouter([
     {
       path:'home',
       element:<Home/>
+    },
+    {
+      path:'order',
+      element:<Order/>
     }
     ]
   },

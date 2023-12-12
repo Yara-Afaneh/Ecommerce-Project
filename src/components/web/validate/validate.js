@@ -15,9 +15,13 @@ export const sendcodeSchema=yup.object({
     email:yup.string().required ("Email is required").email(),
 })
 
-
 export const newpasswordSchema=yup.object({
     email:yup.string().required ("Email is required").email(),
     password:yup.string().required ("Password is required").min(3,"User name must be at least 3 characters").max(30,"User name must be at least 30 characters"),
     code:yup.string().required ("Code is required"),
+})
+
+export const orderSchema=yup.object({
+    phone:yup.string().required ("Mobile Number is required"),
+    address:yup.string().required ("Address is required"),
 })

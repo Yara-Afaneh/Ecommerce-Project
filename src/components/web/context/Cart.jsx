@@ -47,6 +47,19 @@ export default function CartContextProvider({children}) {
      
     }
 
+    const getOrderContext=async ()=>{
+      try {
+        const token= localStorage.getItem('userToken')
+        const {data}= await axios.get(`${import.meta.env.VITE_API_URL}/order`,
+        {headers:{Authorization:`Tariq__${token}`}})
+        return (data);
+      } catch (error) {
+        console.log(error);
+      }
+     
+    }
+
+
     const removeCartContext=async (productId)=>{
       try {
         const token= localStorage.getItem('userToken')
@@ -110,9 +123,12 @@ export default function CartContextProvider({children}) {
 
     }
 
+ 
 
 
-  return <CartContext.Provider value={{addToCartContext,getCartContext,removeCartContext,decreaseQuantity,count,setCount,increaseQuantity,clearAllProducts}}>
+
+
+  return <CartContext.Provider value={{addToCartContext,getCartContext,removeCartContext,decreaseQuantity,getOrderContext,count,setCount,increaseQuantity,clearAllProducts}}>
     {children}
   </CartContext.Provider>
 }
