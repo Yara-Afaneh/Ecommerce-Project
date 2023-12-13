@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom';
 export default function Cart() {
   const {getCartContext,removeCartContext,clearAllProducts,increaseQuantity,decreaseQuantity}=useContext(CartContext)
   const [cart,setCart]=useState([]);
+  const [plus,setPlus]=useState(0);
+  const [minus,setMinus]=useState(0);
+
     const [total, setTotal] = useState(0);
   const getCart= async () =>{
       const res = await getCartContext();
@@ -20,11 +23,14 @@ export default function Cart() {
 
   const clearAll =async () =>{
     const res = await clearAllProducts();
+   
     return res;
   }
 
+  
   const increase =async (productId) =>{
     const res = await increaseQuantity(productId);
+
     return res;
   }
 
@@ -141,7 +147,10 @@ export default function Cart() {
                  </div>
                 </> 
             ):<h2 className='text-center main-color'>Your Cart is Empty</h2>}
-          <button onClick={clearAll} className='clear-btn'>Clear All </button>
+            {cart?(
+              <button onClick={clearAll} className='clear-btn'>Clear All </button>
+              ):null}
+          
             </div>
 
             <div className="cartsummary text-center">

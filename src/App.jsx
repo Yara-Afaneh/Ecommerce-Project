@@ -29,11 +29,13 @@ import UserOrder from './components/web/profile/UserOrder.jsx';
 export default function App() {
 
 let {setUserToken}= useContext(UserContext)
-let {setCount,getCartContext}=useContext(CartContext);
+let {setCount,getCartContext,increaseQuantity,decreaseQuantity}=useContext(CartContext);
 useEffect(()=>{
   if (localStorage.getItem('userToken')!=null){
     setUserToken(localStorage.getItem('userToken'));
     setCount(getCartContext().count);
+ 
+
   }
 },[])
 

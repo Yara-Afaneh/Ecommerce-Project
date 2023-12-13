@@ -10,6 +10,10 @@ export default function Navbar() {
 
   let {userToken,setUserData,setUserToken,userData}=useContext(UserContext);
   let {count}=useContext(CartContext);
+  
+  console.log("counttttttttttttttttttttt")
+  console.log(count)
+ 
 
   const navigate=useNavigate();
 

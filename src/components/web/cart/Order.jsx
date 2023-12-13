@@ -5,6 +5,7 @@ import axios from 'axios'
 import { orderSchema } from '../validate/validate.js'
 import { toast } from 'react-toastify'
 import { UserContext } from '../context/Usercontext.jsx'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -14,6 +15,7 @@ import { UserContext } from '../context/Usercontext.jsx'
 export default function Order() {
 
     let {setUserToken}=useContext(UserContext)
+    const navigate=useNavigate();
   
   const  initialValues={
     phone:'',
@@ -41,7 +43,8 @@ export default function Order() {
         progress: undefined,
         theme: "colored",
         })};
-        console.log (data);
+        console.log(data);
+        navigate('')
 
 
     } catch (error) {
