@@ -1,6 +1,5 @@
 :root{
-    --main-color:rgb(237 20 241 / 68%);  
-
+    --main-color:rgba(20, 156, 241, 0.68); 
 }
 body{
     font-family: 'Josefin Sans', sans-serif;

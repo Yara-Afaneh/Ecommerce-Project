@@ -2,7 +2,7 @@
 /* font-family: 'Josefin Sans', sans-serif; */
 
 :root{
-    --main-color:rgb(237 20 241 / 68%);  
+    --main-color:rgba(20, 156, 241, 0.68); 
 
 }
 body{
@@ -17,7 +17,7 @@ body{
     background-color: var(--main-color);
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 100%;
     
 }
 

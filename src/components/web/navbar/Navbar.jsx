@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import logo from './../img/logo.jpeg'
 import './Navbar.css'
 import { Link, useNavigate } from 'react-router-dom'
@@ -8,12 +8,11 @@ import { CartContext } from '../context/Cart.jsx';
 
 export default function Navbar() {
 
+
+
+
   let {userToken,setUserData,setUserToken,userData}=useContext(UserContext);
-  let {count}=useContext(CartContext);
-  
-  console.log("counttttttttttttttttttttt")
-  console.log(count)
- 
+  let {count,increaseCount,decreaseCount}=useContext(CartContext);
 
   const navigate=useNavigate();
 
@@ -41,12 +40,20 @@ export default function Navbar() {
         <Link className="nav-link " to="/categories">Categories</Link>       
          </li>
         <li className="nav-item mx-3">
-        <Link className="nav-link"  to="/product">Products</Link>
+        <Link className="nav-link"  to="/products">Products</Link>
       </li>
 
       {userToken? (<li className="nav-item mx-3">
-      <Link className="nav-link"  to="/cart">Cart <span className="badge">{count}</span></Link>
+      <Link className="nav-link"  to="/cart">Cart <span className="badge">{count+increaseCount-decreaseCount}</span></Link>
       </li>):null}
+
+      {/* <li className="nav-item mx-3">
+        <input type='text' placeholder='Search ' className="nav-link"  onChange={handleInputChange}/>
+      </li>
+      <li className="nav-item mx-3">
+      
+      </li> */}
+     
       
 
      

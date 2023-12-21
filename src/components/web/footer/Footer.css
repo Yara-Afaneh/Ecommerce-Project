@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+/* font-family: 'Josefin Sans', sans-serif; */
+
+:root{
+    --main-color:rgba(20, 156, 241, 0.68);  
+
+}
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.main-color{
+    color: var(--main-color);
+}
+
+
+
+
+.footer h4{
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+.footer-contact-info i{
+    color: rgb(255, 200, 62);
+}
+.social-contact i:hover{
+    color: rgb(255, 200, 62);
+    transform: scale(80%);
+}
+.social-contact i{
+    color: rgb(153,153,153);
+}
+.paragraph-hover{
+    position: relative;
+}
+
+.paragraph-hover::after{
+    content: '';
+    width:0;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 2s;
+}
+.paragraph-hover:hover::after{
+    content: '';
+    border:solid 1px var(--main-color);
+    width:100%;
+}
+.paragraph-hover:hover{
+   color: var(--main-color);
+   width: fit-content;
+}
+.footer-img{
+   position: relative;
+}
+
+.overlay {
+    background-color: var(--main-color);
+    opacity: .8;
+    transform: scaleY(0);
+    transition: .5s;
+}
+
+
+.footer-img:hover .overlay {
+    transform: scaleY(1);
+    border: none;
+
+}
+
+.overlay i {
+    transform: scale(0);
+    transition: 0.5s, .5s;
+
+}
+
+.footer-img:hover i {
+    transform: scale(1);
+
+}
+
+.footer-img i:hover {
+    background-color: transparent;
+    color:white;
+}
+.footer-info{
+    position: relative;
+}
+.footer-info::after{
+    content: '';
+    width:0;
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 2s;
+}
+.footer-info:hover::after{
+    content: '';
+    border:solid 1px var(--main-color);
+    width:100%;
+}
+.footer-info:hover{
+    color: rgb(255, 200, 62);
+    width: fit-content;
+}
+
+
+.paying-card{
+  width: 42px !important;
+  height: 25px !important;
+}
+.social-contact img{
+    width: 20%;
+}
+
+
+
+

@@ -29,7 +29,6 @@ export default function Order() {
         const {data}= await axios.post(`${import.meta.env.VITE_API_URL}/order`,
         order
           ,{headers:{authorization:`Tariq__${token}`}})
-
       if (data.message=='success'){
          localStorage.setItem('userToken',data.token);
         setUserToken(data.token);
@@ -43,8 +42,7 @@ export default function Order() {
         progress: undefined,
         theme: "colored",
         })};
-        console.log(data);
-        navigate('')
+        navigate('/products')
 
 
     } catch (error) {

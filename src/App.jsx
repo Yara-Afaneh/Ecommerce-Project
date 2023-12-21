@@ -8,7 +8,7 @@ import Categories from './components/web/categories/Categories.jsx';
 import DashedLayout from './layouts/DashedLayout.jsx';
 import HomeDashed from './components/dashboared/home/Home.jsx';
 import CategoriesDashed from './components/dashboared/categories/Categories.jsx';
-import Products from './components/web/products/Product.jsx';
+import Products from './components/web/products/Products.jsx';
 import CategoriesDetails from './components/web/categories/CategoriesDetails.jsx';
 import Product from './components/web/products/Product.jsx';
 import  { UserContext } from './components/web/context/Usercontext.jsx';
@@ -23,19 +23,18 @@ import Order from './components/web/cart/Order.jsx';
 import UserInfo from './components/web/profile/UserInfo.jsx';
 import UserContact from './components/web/profile/UserContact.jsx';
 import UserOrder from './components/web/profile/UserOrder.jsx';
+import Review from './components/web/products/Review.jsx';
 
 
 
 export default function App() {
 
 let {setUserToken}= useContext(UserContext)
-let {setCount,getCartContext,increaseQuantity,decreaseQuantity}=useContext(CartContext);
+let {setCount,getCartContext}=useContext(CartContext);
 useEffect(()=>{
   if (localStorage.getItem('userToken')!=null){
     setUserToken(localStorage.getItem('userToken'));
     setCount(getCartContext().count);
- 
-
   }
 },[])
 
@@ -66,7 +65,7 @@ const router= createBrowserRouter([
       path:'categories',
       element:<Categories/>
     },{
-      path:'product',
+      path:'products',
       element:<Products/>
     },
     {
@@ -77,6 +76,12 @@ const router= createBrowserRouter([
       path:'products/category/:categoryId/product/:productId',
       element:<Product/>
     },
+    {
+      path:'products/category/:categoryId/product/:productId/review/:productId',
+      element:<Review/>
+    },
+    
+  
     {
       path:'cart',
       element:

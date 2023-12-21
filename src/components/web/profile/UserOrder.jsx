@@ -6,7 +6,7 @@ export default function UserOrder() {
     const [order,setOrder]=useState([]);
     const getOrder= async () =>{
         const data = await getOrderContext();
-      setOrder (data.orders);
+      setOrder(data.orders);
     }
   
     useEffect(()=>{
@@ -17,7 +17,7 @@ export default function UserOrder() {
     <>
          <>
       {order?.length ? (
-        order.map((ele,index) => (
+        order.map((ele) => (
             <div key={ele.userId}>
 
 <table class="table">
@@ -27,7 +27,7 @@ export default function UserOrder() {
       <th scope="col">Address</th>
       <th scope="col">Phone Number</th>
       <th scope="col">Final Price </th>
-      <th scope="col">Payment Type </th>
+      <th scope="col">Product Id </th>
       <th scope="col">Order Status </th>
     </tr>
   </thead>
@@ -37,8 +37,12 @@ export default function UserOrder() {
       <td>{ele.address}</td>
       <td>{ele.phoneNumber}</td>
       <td>{ele.finalPrice}</td>
-      <td>{ele.paymentType}</td>
+      <td>
+      {ele.products.map((product) =>
+          <p>{product.productId}</p>
+      )}</td>
       <td>{ele.status}</td>
+      
     </tr>
   </tbody>
 </table>

@@ -2,7 +2,7 @@
 /* font-family: 'Josefin Sans', sans-serif; */
 
 :root{
-    --main-color:rgb(237 20 241 / 68%);  
+    --main-color:rgba(20, 156, 241, 0.68); 
 
 }
 body{
@@ -11,6 +11,9 @@ body{
 
 .main-color{
     color: var(--main-color);
+}
+.bg-main-color{
+    background-color: var(--main-color);
 }
 
 .addtocart-btn{
@@ -27,4 +30,22 @@ body{
     border:1px solid var(--main-color);
     padding: 10px;
     border-radius: 10px;
+}
+
+.products .pagination a:hover{
+    background-color: var(--main-color)!important;
+    color: white!important;
+
+}
+.addToCart{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.addToCart button{
+    width: 15%;
+   background-color: white;
+   border: none;
+  
 }

@@ -25,3 +25,9 @@ export const orderSchema=yup.object({
     phone:yup.string().required ("Mobile Number is required"),
     address:yup.string().required ("Address is required"),
 })
+
+export const reveiwSchema=yup.object({
+    comment:yup.string().required ("comment is required"),
+    rating:yup.number().required ("Rating is required").max(5,'Rating must be less than 5 ')
+})
+

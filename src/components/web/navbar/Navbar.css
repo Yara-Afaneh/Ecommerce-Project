@@ -2,7 +2,7 @@
 /* font-family: 'Josefin Sans', sans-serif; */
 
 :root{
-    --main-color:rgb(237 20 241 / 68%);  
+    --main-color:rgba(20, 156, 241, 0.68);  
 
 }
 body{
@@ -32,4 +32,9 @@ body{
 }
 .badge {
     background-color: var(--main-color);
+}
+
+.navbar .nav-item input{
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
 }

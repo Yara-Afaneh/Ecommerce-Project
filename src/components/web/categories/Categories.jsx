@@ -18,7 +18,7 @@ export default function Categories() {
 
 
  const getCategories= async ()=>{
-  const {data}=await axios.get(`${import.meta.env.VITE_API_URL}/categories/active?page=1&limit=6`)
+  const {data}=await axios.get(`${import.meta.env.VITE_API_URL}/categories/active?page=total&limit=8`)
   return(data);
  }
 
@@ -31,7 +31,7 @@ export default function Categories() {
   return (
 
   <div className='container'>
-    <div className="swiper-slide" data-swiper-autoplay="2000"></div>
+    <div className="swiper-slide" data-swiper-autoplay="2000">
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, Autoplay]}
     spaceBetween={50}
@@ -50,13 +50,15 @@ export default function Categories() {
     {data?.categories.length? data ?.categories.map((category)=>
     
     <SwiperSlide key={category._id}>
-      <Link to={`/products/category/${category._id}`}>
-        <img src={category.image.secure_url}/>
+      <Link to={`/products/category/${category._id}`} className='row'>
+        <img src={category.image.secure_url} className='col-lg-12'/>
       </Link>
     </SwiperSlide>
      ):<h2 className='text-center main-color'>no categories found</h2>}
 
   </Swiper>
+    </div>
+ 
   <div className="swiper-custom-pagination"></div>
   </div>
   )
